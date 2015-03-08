@@ -1,0 +1,46 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Prueba Hotel</a>
+    </div>  
+
+
+<!--
+    <div>
+
+<% if user_signed_in? %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active">Bienvenido <%= current_user.email %></li>
+  <li role="presentation"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>  
+</ul>
+<% else %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><%= link_to "crear cuenta", new_user_registration_path %></li>
+  <li role="presentation"><%= link_to "logueate", new_user_session_path %></li>  
+</ul>
+
+
+	<% end %>
+
+</div>
+-->
+<div>
+	<% if user_signed_in? %>
+
+  <p class="navbar-text navbar-right">Bienvenido <%= current_user.email %></p>
+  <button type="button" class="btn btn-default navbar-btn navbar-right"><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></button>  
+
+	<% else %>
+
+	<button type="button" class="btn btn-default navbar-btn"><%= link_to "crear cuenta", new_user_registration_path %></button>
+  	<button type="button" class="btn btn-default navbar-btn"><%= link_to "logueate", new_user_session_path %></button> 
+
+
+	<% end %>
+</div>
+
+    
+  </div>
+</nav>

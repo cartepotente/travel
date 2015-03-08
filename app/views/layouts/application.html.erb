@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'share/navigation' %>
+
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+
+<div id="main-container" class="container">
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Fastidio hotel</h3>
+          <ul>
+          <li><%= link_to hotels_path ,class: 'btn btn-default' do %>
+  <i class="glyphicon glyphicon-equalizer"></i> Hotel
+<% end %></li>
+<li></li>
+          <li><%= link_to rooms_path ,class: 'btn btn-default' do %>
+  <i class="glyphicon glyphicon-bed"></i> Rooms
+<% end %></li>
+          <li></li>
+          </ul>
+        </div>
+        <div class="col-xs-9">
+
+          <%= yield %>
+
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hotels</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.name %></td>
+        <td><%= link_to 'Show', hotel , class: 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_hotel_path(hotel) , class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Esta Segurp' } , class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to  new_hotel_path, class: 'btn btn-default' do %>
+  <i class="glyphicon glyphicon-plus"></i> Nuevo Hotel
+<% end %>

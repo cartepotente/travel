@@ -1,0 +1,25 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control'%>
+  </div>
+  <div class="field form-group">
+    <%= f.label :hotel_id %><br>
+    <%= f.text_field :hotel_id, class: 'form-control'%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear ", class: 'btn btn-default'  %>
+  </div>
+<% end %>

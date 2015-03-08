@@ -1,0 +1,12 @@
+<h1>Bienvendo a travel-hotel</h1>
+
+<% if user_signed_in? %>
+	<p> Bienvenido <%= current_user.email %></p>
+	<p> <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></p>
+<% else %>
+	<p> <%= link_to "crear cuenta", new_user_registration_path %></p>
+	<p>Si ya tienes cuenta:<%= link_to "logueate", new_user_session_path %> </p>
+	<% end %>
+
+<p></p>
+
